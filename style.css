@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1b1a17;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+}
+.input {
+  width: 16.5rem;
+  height: 2rem;
+  color: aliceblue;
+  background-color: #1f1e1b;
+  border: 1px solid #ff8303;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5rem;
+}
+.add {
+  margin-left: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #1f1e1b;
+  border: 1px solid #ff8303;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ff8303;
+  cursor: pointer;
+}
+.add:hover {
+  transition: all 500ms ease-in;
+  background-color: #ff8303;
+  color: #1f1e1b;
+}
+.bstyle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #1f1e1b;
+  border: 1px solid #ff8303;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #ff8303;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25;
+}
+.todo {
+  width: 22rem;
+  min-height: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: #1f1e1b;
+  border: 1px solid #ff8303;
+  border-radius: 5px;
+  font-size: 16px;
+  color: aliceblue;
+}
+.todo-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 0.5rem;
+}
+.todo-list {
+  margin: 1rem 1rem 1rem 1rem;
+}
+.todo-about {
+  max-width: 5rem;
+}
+p {
+  width: 17rem;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .input {
+    width: 15rem;
+  }
+  .todo {
+    width: 15rem;
+  }
+  .todo-about {
+    max-width: 3rem;
+  }
+  p {
+    width: 10rem;
+  }
+}
