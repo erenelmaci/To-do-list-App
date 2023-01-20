@@ -2,19 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 body {
-  background-color: #1b1a17;
+  background-color: #928c7a;
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-.list-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  word-wrap: break-word;
 }
 .input {
   width: 16.5rem;
@@ -35,8 +29,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.todo-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  margin-top: 5rem;
 }
 .add {
   margin-left: 1rem;
@@ -68,7 +68,7 @@ body {
   margin-top: 0.25rem;
   margin-bottom: 0.25;
 }
-.todo {
+li {
   width: 22rem;
   min-height: 5rem;
   margin-bottom: 1rem;
@@ -76,11 +76,12 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  list-style-type: none;
   background-color: #1f1e1b;
   border: 1px solid #ff8303;
-  border-radius: 5px;
-  font-size: 16px;
-  color: aliceblue;
+  border-radius: 1rem;
+  font-size: 20px;
+  padding: 0 1rem 0 1rem;
 }
 .todo-buttons {
   display: flex;
@@ -89,14 +90,28 @@ body {
   flex-direction: column;
   margin-right: 0.5rem;
 }
-.todo-list {
-  margin: 1rem 1rem 1rem 1rem;
+.fa-trash {
+  color: rgb(255, 136, 0);
+  cursor: pointer;
 }
-.todo-about {
-  max-width: 5rem;
+.fa-check {
+  color: aqua;
 }
-p {
-  width: 17rem;
+.pContainer{
+  display: flex;
+  justify-content: center;
+  max-width: 15rem;
+  flex-direction: column;
+  word-wrap:break-word;
+  padding: 1rem 0 1rem 0;
+}
+h1 {
+  text-align: center;
+  padding-top: 2rem;
+  color: #e69720;
+}
+.pTitleText{
+  color: #ff8303;
 }
 @media (max-width: 768px) {
   .container {
@@ -105,7 +120,7 @@ p {
   .input {
     width: 15rem;
   }
-  .todo {
+  .todos {
     width: 15rem;
   }
   .todo-about {
