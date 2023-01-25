@@ -5,7 +5,7 @@
   color: white;
 }
 body {
-  background-color: #928c7a;
+  background-color: #064242;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -95,11 +95,11 @@ li {
   cursor: pointer;
 }
 .fa-check {
-  color: aqua;
+  color: red;
+  cursor: pointer;
 }
 .pContainer{
   display: flex;
-  justify-content: center;
   max-width: 15rem;
   flex-direction: column;
   word-wrap:break-word;
@@ -112,6 +112,11 @@ h1 {
 }
 .pTitleText{
   color: #ff8303;
+  padding-bottom: .5rem;
+}
+.pAboutText{
+  color: #ff8303;
+  padding-bottom: .5rem;
 }
 @media (max-width: 768px) {
   .container {

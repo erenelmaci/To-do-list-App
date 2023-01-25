@@ -21,7 +21,7 @@ addButton.addEventListener("click", (e) => {
     alert("Please, enter new todo text");
     return;
   }
-  const newTodo = {
+  var newTodo = {
     id: new Date().getTime(),
     completed: false,
     title: todoTitle.value,
@@ -38,7 +38,7 @@ addButton.addEventListener("click", (e) => {
 });
 
 const createTodo = (newTodo) => {
-  const { id, completed, title, about } = newTodo;
+  var { id, completed, title, about } = newTodo;
 
   const li = document.createElement("li");
   li.setAttribute("id", id);
@@ -61,6 +61,7 @@ const createTodo = (newTodo) => {
 
   const pAboutText = document.createElement("p");
   pAboutText.innerText = about;
+  pTitleText.classList.add("pAboutText");
   pContainer.appendChild(pAboutText);
 
   const removeIcon = document.createElement("i");
@@ -79,6 +80,12 @@ todoUl.addEventListener("click", (e) => {
     todoList.forEach((todo) => {
       if (todo.id == idAttr) {
         todo.completed = !todo.completed;
+        if (todo.completed === true) {
+          e.target.style.transition = "color 1s ease";
+          e.target.style.color = "#1cd80b";
+        } else {
+          e.target.style.color = "red";
+        }
       }
     });
     localStorage.setItem("todoList", JSON.stringify(todoList));
@@ -86,8 +93,5 @@ todoUl.addEventListener("click", (e) => {
     e.target.parentElement.remove();
     todoList = todoList.filter((todo) => todo.id != idAttr);
     localStorage.setItem("todoList", JSON.stringify(todoList));
-  } else {
-    alert("other element clicked");
   }
-  console.log(todoList);
 });
