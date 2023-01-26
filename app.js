@@ -12,6 +12,19 @@ window.addEventListener("load", () => {
 const getTodoListFromLocalStorage = () => {
   todoList.forEach((todo) => {
     createTodo(todo);
+    if (todo.completed === true) {
+      document
+        .getElementById(todo.id)
+        .querySelector(".fa-check").style.transition = "color 2s ease";
+      document.getElementById(todo.id).querySelector(".fa-check").style.color =
+        "#1cd80b";
+    } else {
+      document
+        .getElementById(todo.id)
+        .querySelector(".fa-check").style.transition = "color 2s ease";
+      document.getElementById(todo.id).querySelector(".fa-check").style.color =
+        "red";
+    }
   });
 };
 
@@ -21,7 +34,7 @@ addButton.addEventListener("click", (e) => {
     alert("Please, enter new todo text");
     return;
   }
-  var newTodo = {
+  const newTodo = {
     id: new Date().getTime(),
     completed: false,
     title: todoTitle.value,
@@ -38,10 +51,11 @@ addButton.addEventListener("click", (e) => {
 });
 
 const createTodo = (newTodo) => {
-  var { id, completed, title, about } = newTodo;
+  const { id, completed, title, about } = newTodo;
 
   const li = document.createElement("li");
   li.setAttribute("id", id);
+  li.classList.add("slide-in-right");
 
   completed ? li.classList.add("checked") : "";
   li.setAttribute("id", id);
@@ -81,7 +95,6 @@ todoUl.addEventListener("click", (e) => {
       if (todo.id == idAttr) {
         todo.completed = !todo.completed;
         if (todo.completed === true) {
-          e.target.style.transition = "color 1s ease";
           e.target.style.color = "#1cd80b";
         } else {
           e.target.style.color = "red";
